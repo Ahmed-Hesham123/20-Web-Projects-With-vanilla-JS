@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Questrial&display=swap");
+
+:root {
+  --main-color: rgb(0, 134, 255);
+  --secondary-color: #1cfbff;
+  --white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  /* font-size: 62.5%; */
+  font-size: 100%;
+  transition: all 0.25s;
+}
+
+body {
+  background: rgb(134, 197, 255);
+  background: radial-gradient(
+    circle,
+    rgba(134, 197, 255, 1) 0%,
+    rgba(55, 113, 183, 1) 35%,
+    rgba(60, 140, 212, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 14px;
+  font-family: "Questrial", sans-serif;
+}
+
+h1 {
+  color: var(--white);
+  margin: 1.25rem 0;
+  font-size: 2.5rem;
+}
+
+.container {
+  position: relative;
+  width: 60%;
+  cursor: pointer;
+  animation: containerAnimation 10s infinite linear;
+}
+
+@keyframes containerAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: rgba(0, 0, 0, 0.5); */
+  background: rgba(42, 138, 255, 0.25);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.overlay i {
+  cursor: pointer;
+  font-size: 10rem;
+  color: #2474ff;
+  animation: playAnimation 1s infinite linear;
+}
+
+@keyframes playAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.screen {
+  cursor: pointer;
+  width: 100%;
+  /* background: #000 !important; */
+  background: rgba(131, 187, 255, 0.25);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: none;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  position: relative;
+}
+
+.controls {
+  /* background: #333; */
+  color: var(--white);
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1rem;
+  background: rgba(90, 200, 255, 0.25);
+  box-shadow: 0 0.5rem 2rem 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: none;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  animation: containerAnimation 10s infinite linear;
+}
+
+.controls .btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.controls .fa-play {
+  color: #0043b7;
+}
+
+.controls .fa-stop {
+  color: #2ce3ff;
+}
+
+.controls .fa-pause {
+  color: #0043b7;
+}
+
+.controls .timestamp {
+  color: var(--white);
+  font-weight: bold;
+  margin-left: 0.625rem;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+@media (max-width: 50rem) {
+  .container {
+    width: 90%;
+  }
+  .controls {
+    width: 90%;
+  }
+}
+
+@media (max-width: 35rem) {
+  html {
+    font-size: 62.5%;
+  }
+}
+

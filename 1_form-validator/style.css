@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --white: #fff;
+  --main: rgb(0, 198, 255);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  border-radius: 5px;
+  background: var(--main);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 198, 255, 0.678) 0%,
+    rgba(0, 117, 255, 0.678) 35%,
+    rgba(0, 136, 255, 0.678) 100%
+  );
+  width: 400px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 1s ease;
+  animation: containerAnimation 10s infinite linear;
+  border-radius: 74% 26% 80% 20% / 19% 84% 16% 81%;
+}
+
+.container:hover {
+  transform: rotateY(5deg);
+}
+
+@keyframes containerAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.625rem);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+h2 {
+  text-align: center;
+  color: var(--white);
+  margin: 0 0 1.25rem;
+}
+
+.form {
+  padding: 2rem 2.5rem;
+}
+
+.form-control {
+  margin-bottom: 0.625rem;
+  padding-bottom: 1.25rem;
+  position: relative;
+}
+
+.form-control label {
+  color: var(--white);
+  display: block;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4% 96% 4% 96% / 93% 3% 97% 7%;
+  padding: 0.625rem;
+  font-size: 1rem;
+  color: #080000;
+  transition: all 0.5s;
+  width: 100%;
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px #fff;
+}
+
+.form-control input:hover {
+  border-radius: 93% 3% 97% 7% / 4% 96% 4% 96%;
+}
+
+.form-control input:focus {
+  outline: 0;
+  border-color: var(--main);
+  color: var(--main);
+  border-radius: 10% 90% 10% 90% / 88% 9% 91% 12%;
+}
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  visibility: visible;
+}
+
+.form button {
+  cursor: pointer;
+  border: 2px solid var(--main);
+  color: var(--white);
+  display: block;
+  font-size: 1rem;
+  padding: 0.625rem;
+  border-radius: 8% 92% 10% 90% / 87% 12% 88% 13%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 200, 255, 0.2) 0%,
+    rgba(0, 119, 255, 0.2) 35%,
+    rgba(0, 136, 255, 0.2) 100%
+  );
+  margin-top: 1.25rem;
+  width: 100%;
+  transition: all 0.5s;
+  animation: containerAnimation 10s infinite;
+  outline: 0;
+  box-shadow: inset 5px 5px 10px rgba(255, 255, 255, 0.1), inset -5px -5px 10px #ffffff14;
+}
+
+.form button:hover {
+  background: rgb(0, 134, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 134, 255, 0.2) 0%,
+    rgba(0, 117, 255, 0.2) 35%,
+    rgba(0, 198, 255, 0.2) 100%
+  );
+  border-radius: 87% 12% 88% 13% / 8% 92% 10% 90%;
+}
+
+@media (max-width: 30rem) {
+  .container {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+:root {
+  --border-color: #e3e5e4;
+  --background-color: #1c1c9f20;
+  --text-color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    #090979 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 2.5rem;
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  font-size: 3.125rem;
+  color: var(--text-color);
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+}
+
+p {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  letter-spacing: 0.3125rem;
+}
+
+.draggable-list {
+  color: var(--text-color);
+  border: 0.0625rem solid var(--border-color);
+  padding: 0;
+  list-style-type: none;
+}
+
+.draggable-list li {
+  background: #02002450;
+  -webkit-backdrop-filter: blur(3.125rem);
+  backdrop-filter: blur(3.125rem);
+  color: var(--text-color);
+  display: flex;
+  flex: 1;
+}
+
+.draggable-list li:not(:last-of-type) {
+  border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.draggable-list .number {
+  background: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  width: 3.75rem;
+  height: 3.75rem;
+}
+
+.draggable-list li.over .draggable {
+  background: #02002450;
+}
+
+.draggable-list .person-name {
+  margin: 0 1.25rem 0 0;
+}
+
+.draggable-list li.right .person-name {
+  color: #3ae374;
+}
+
+.draggable-list li.wrong .person-name {
+  color: #ff3838;
+}
+
+.draggable {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  flex: 1;
+}
+
+.check-btn {
+  cursor: pointer;
+  background: var(--background-color);
+  border: none;
+  padding: 0.625rem 1.25rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  border-radius: 3.125rem;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(3.125rem);
+  backdrop-filter: blur(3.125rem);
+  display: flex;
+  gap: 0.625rem;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.check-btn:hover {
+  background: #09097930;
+}
+
+.check-btn:active {
+  transform: scale(0.98) translateY(0.0625rem);
+}
+
+.check-btn:focus {
+  outline: none;
+}
+
+
+@media (max-width: 31.25rem) {
+  h1 {
+    font-size: 1.25rem;
+  }
+  p {
+    letter-spacing: normal;
+    text-align: center;
+    width: 95%;
+  }
+}
